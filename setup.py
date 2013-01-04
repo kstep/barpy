@@ -14,6 +14,13 @@ setup(name="barpy",
       author_email="me@kstep.me",
       license="BSD",
       packages=find_packages(),
+      classifiers=[
+          'Development Status :: 3 - Alpha',
+          'License :: OSI Approved :: BSD License',
+          'Operating System :: POSIX',
+          'Programming Language :: Python :: 2.7',
+          'Topic :: Software Development :: Libraries'
+          ],
       install_requires=[
           'PIL', 'qrcode'
           ]

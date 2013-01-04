@@ -7,6 +7,7 @@ except ImportError:
 
 setup(name="barpy",
       version="0.1",
+      url="http://github.com/kstep/barpy/",
       description="Ruby barby barcodes generating library port to Python",
       long_description=open("README.md").read(),
       author="Konstantin Stepanov",

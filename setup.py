@@ -14,6 +14,7 @@ setup(name="barpy",
       author_email="me@kstep.me",
       license="BSD",
       packages=find_packages(),
+      package_data={'barpy': ['../README.md']},
       classifiers=[
           'Development Status :: 3 - Alpha',
           'License :: OSI Approved :: BSD License',

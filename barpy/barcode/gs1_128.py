@@ -11,11 +11,11 @@ class GS1128(Code128):
 
     @property
     def data(self):
-        return self.FNC1 + self.application_identifier + super(GS1128, self).data
+        return self.FNC1 + self.application_identifier + Code128.data.fget(self)
 
     @data.setter
     def data(self, value):
-        super(GS1128, self).__setattr__('data', value)
+        Code128.data.fset(self, value)
 
     @property
     def partial_data(self):

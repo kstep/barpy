@@ -257,9 +257,9 @@ class Code128(Barcode1D):
 
     @property
     def checksum(self):
-        return sum(
+        return (self.start_num + sum(
                 map(lambda pair: pair[1] * (pair[0] + 1),
-                    enumerate(self.numbers + self.extra_numbers))) % 103
+                    enumerate(self.numbers + self.extra_numbers)))) % 103
 
     @property
     def numbers(self):

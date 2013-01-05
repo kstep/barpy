@@ -24,8 +24,12 @@ class Barcode(object):
         return self.outputters[name][0]
 
     def __getattr__(self, name):
-        klass, method_name = self.__class__.outputters[name]
-        return getattr(klass(self), method_name)
+        try:
+            klass, method_name = self.__class__.outputters[name]
+            return getattr(klass(self), method_name)
+
+        except (KeyError, AttributeError) as e:
+            raise AttributeError, e
 
 class Barcode1D(Barcode):
     pass

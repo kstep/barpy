@@ -1,7 +1,12 @@
-This is Python a port of barby library written in Ruby. I couldn't find
+# barpy #
+
+This is Python a port of [barby][] library written in Ruby. I couldn't find
 lightweight Python barcode generation library of the same caliber as **barby**
-(elaphe is broken and others don't support GS1-128 *and* QRCode at the same
+([elaphe][] is broken and others don't support GS1-128 *and* QRCode at the same
 time, so I ported **barby**).
+
+[barby]: http://toreto.re/barby/
+[elaphe]: http://code.google.com/p/elaphe/
 
 API is basicly the same as of **barby**, but in Python style.
 
@@ -13,9 +18,3 @@ code which have more Rubyish flavour instead of Pythonian (e.g. a lot of
 `@property` decorators to call methods without parenthesis). I did it to avoid
 logic errors during porting process, I will make code more Pythonian in the
 future.
-
-See also:
-
-[barby]: http://toreto.re/barby/
-[elaphe]: http://code.google.com/p/elaphe/
-

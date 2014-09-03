@@ -51,7 +51,7 @@ setup(name="barpy",
           'Topic :: Software Development :: Libraries'
           ],
       install_requires=[
-          'PIL', 'qrcode'
+          'Pillow', 'qrcode'
           ]
       )
 

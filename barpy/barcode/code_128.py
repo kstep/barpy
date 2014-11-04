@@ -210,7 +210,7 @@ class Code128(Barcode1D):
     def extra(self, value):
         if not value.startswith((self.CODEA, self.CODEB, self.CODEC)):
             raise ValueError("Extra must begin with \\305, \\306 or \\307")
-        (type, data) = (extra[0], extra[1:])
+        (type, data) = (value[0], value[1:])
         self.__extra = self.class_for(type)(data)
 
     @property
@@ -253,7 +253,7 @@ class Code128(Barcode1D):
     def extra_encoding(self):
         if not self.extra:
             return ""
-        return self.change_code_encoding_for(self.extra) + extra.data_encoding + extra.extra_encoding
+        return self.change_code_encoding_for(self.extra) + self.extra.data_encoding + self.extra.extra_encoding
 
     @property
     def checksum(self):
@@ -269,7 +269,7 @@ class Code128(Barcode1D):
     def extra_numbers(self):
         if not self.extra:
             return []
-        [self.change_code_number_for(self.extra)] + self.extra.numbers + self.extra.extra_numbers
+        return [self.change_code_number_for(self.extra)] + self.extra.numbers + self.extra.extra_numbers
 
     @property
     def encodings(self):
@@ -294,7 +294,7 @@ class Code128(Barcode1D):
     def change_code_encoding_for(self, barcode):
         return self.encodings[self.change_code_number_for(barcode)]
 
-    def class_for(character):
+    def class_for(self, character):
         if character in ('A', self.CODEA):
             return Code128A
         elif character in ('B', self.CODEB):
